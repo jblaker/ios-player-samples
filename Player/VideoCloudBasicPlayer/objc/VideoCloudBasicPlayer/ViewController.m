@@ -54,8 +54,10 @@ static NSString * const kViewControllerVideoID = @"3666678807001";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    // Set up our player view. Create with a standard VOD layout.
-    BCOVPUIPlayerView *playerView = [[BCOVPUIPlayerView alloc] initWithPlaybackController:self.playbackController options:nil controlsView:[BCOVPUIBasicControlView basicControlViewWithVODLayout] ];
+    // Set up our player view. Create with a standard VOD layout, and enable the picture-in-picture button
+    BCOVPUIPlayerViewOptions *options = [BCOVPUIPlayerViewOptions new];
+    options.displayPictureInPictureButton = YES;
+    BCOVPUIPlayerView *playerView = [[BCOVPUIPlayerView alloc] initWithPlaybackController:self.playbackController options:options controlsView:[BCOVPUIBasicControlView basicControlViewWithVODLayout] ];
 
     [_videoContainer addSubview:playerView];
     playerView.translatesAutoresizingMaskIntoConstraints = NO;

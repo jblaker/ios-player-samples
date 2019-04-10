@@ -74,6 +74,10 @@ OUX samples demonstrate how to use the OUX plugin.
 
 Player samples demonstrate how to use the core SDK. These are intended to cover use cases like custom controls, analytics, and playback.
 
+##### Specific Features
+
+- Picture-in-Picture functionality can be found in the `VideoCloudBasicPlayer` sample app. 
+
 #### PlayerUI
 
 PlayerUICustomization demonstrates modification of the BCOVPlayerUI controls and customization of VoiceOver properties for accessibility. 
