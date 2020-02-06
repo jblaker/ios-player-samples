@@ -567,6 +567,12 @@
 
 #pragma mark - BCOVOfflineVideoManagerDelegate Methods
 
+- (void)didCreateSharedBackgroundSesssionConfiguration:(NSURLSessionConfiguration *)backgroundSessionConfiguration
+{
+    // Helps prevent downloads from appearing to sometimes stall
+    backgroundSessionConfiguration.discretionary = NO;
+}
+
 - (void)offlineVideoToken:(BCOVOfflineVideoToken)offlineVideoToken
              downloadTask:(AVAssetDownloadTask *)downloadtask
             didProgressTo:(NSTimeInterval)percent

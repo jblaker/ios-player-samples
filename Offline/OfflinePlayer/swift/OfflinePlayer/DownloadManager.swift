@@ -450,6 +450,11 @@ extension DownloadManager {
 
 extension DownloadManager: BCOVOfflineVideoManagerDelegate {
     
+    func didCreateSharedBackgroundSesssionConfiguration(_ backgroundSessionConfiguration: URLSessionConfiguration!) {
+        // Helps prevent downloads from appearing to sometimes stall
+        backgroundSessionConfiguration.isDiscretionary = false
+    }
+    
     func offlineVideoToken(_ offlineVideoToken: String?, downloadTask: AVAssetDownloadTask?, didProgressTo progressPercent: TimeInterval) {
         // This delegate method reports progress for the primary video download
         let percentString = String(format: "%0.2f", progressPercent)
